@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";  // or wherever your Navbar.js is
 import Breadcrumbs from '../components/Breadcrumbs';
 import Dashboard from "../pages/Dashboard"; // Adjust path if Dashboard.js is in pages folder and Page.js is also in pages folder
+import ReferralTool from "../pages/ReferralTool";
 
 
 import {
@@ -278,7 +279,7 @@ const Page = () => {
 
                   {/* Nested Affiliate routes */}
                   <Route path="/affiliate/dashboard" element={<Dashboard />} />
-                  <Route path="/affiliate/referral-tool" element={<Option2 />} />
+                  <Route path="//Affiliate/Referral Tool" element={<ReferralTool />} />
                   <Route path="/affiliate/earning-history" element={<Option3 />} />
                 </Routes>
               </div>
