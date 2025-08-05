@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";  // or wherever your Navbar.js is
+import Breadcrumbs from '../components/Breadcrumbs';
+import Dashboard from "../pages/Dashboard"; // Adjust path if Dashboard.js is in pages folder and Page.js is also in pages folder
+
 
 import {
   BrowserRouter as Router,
@@ -22,7 +25,7 @@ const Sidebar = ({
       <nav>
         <ul style={styles.navList}>
           <li>
-            <Link to="/" style={styles.link} onClick={() => { }}>
+            <Link to="/Dashboard" style={styles.link} onClick={() => { }}>
               <div style={styles.iconWrapper}>
                 <i className="fas fa-th-large" style={styles.icon}></i>
               </div>
@@ -30,7 +33,7 @@ const Sidebar = ({
             </Link>
           </li>
           <li>
-            <Link to="/about" style={styles.link}>
+            <Link to="/Patients" style={styles.link}>
               <div style={styles.iconWrapper}>
                 <i className="fas fa-user-injured"></i>
               </div>
@@ -38,7 +41,7 @@ const Sidebar = ({
             </Link>
           </li>
           <li>
-            <Link to="/about" style={styles.link}>
+            <Link to="/Doctor Schedule" style={styles.link}>
               <div style={styles.iconWrapper}>
                 <i className="fas fa-calendar-alt"></i>
               </div>
@@ -46,7 +49,7 @@ const Sidebar = ({
             </Link>
           </li>
           <li>
-            <Link to="/about" style={styles.link}>
+            <Link to="/Appointments" style={styles.link}>
               <div style={styles.iconWrapper}>
                 <i className="fas fa-calendar-check"></i>
               </div>
@@ -54,7 +57,7 @@ const Sidebar = ({
             </Link>
           </li>
           <li>
-            <Link to="/about" style={styles.link}>
+            <Link to="/chat" style={styles.link}>
               <div style={styles.iconWrapper}>
                 <i className="fas fa-comment-alt"></i>
               </div>
@@ -62,7 +65,7 @@ const Sidebar = ({
             </Link>
           </li>
           <li>
-            <Link to="/about" style={styles.link}>
+            <Link to="/Consultation" style={styles.link}>
               <div style={styles.iconWrapper}>
                 <i className="fas fa-stethoscope"></i>
               </div>
@@ -70,7 +73,7 @@ const Sidebar = ({
             </Link>
           </li>
           <li style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-            <Link to="#" style={{ ...styles.link, flex: 1, display: "flex", alignItems: "center" }}>
+            <Link to="/wallet" style={{ ...styles.link, flex: 1, display: "flex", alignItems: "center" }}>
               <div style={styles.iconWrapper}>
                 <i className="fas fa-wallet" style={styles.icon}></i>
               </div>
@@ -97,12 +100,12 @@ const Sidebar = ({
           {walletDropdownOpen && (
             <ul style={styles.dropdownList}>
               <li>
-                <Link to="/wallet-overview" style={styles.link}>
+                <Link to="/Wallet/Overview" style={styles.link}>
                   Overview
                 </Link>
               </li>
               <li>
-                <Link to="/wallet-transactions" style={styles.link}>
+                <Link to="/Wallet/Transactions" style={styles.link}>
                   Transactions
                 </Link>
               </li>
@@ -110,7 +113,7 @@ const Sidebar = ({
           )}
 
           <li style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-            <Link to="#" style={{ ...styles.link, flex: 1, display: "flex", alignItems: "center" }}>
+            <Link to="Affiliate" style={{ ...styles.link, flex: 1, display: "flex", alignItems: "center" }}>
               <div style={styles.iconWrapper}>
                 <i className="fas fa-user-friends" style={styles.icon}></i>
               </div>
@@ -137,13 +140,13 @@ const Sidebar = ({
           {affiliateDropdownOpen && (
             <ul style={styles.dropdownList}>
               <li>
-                <Link to="/option1" style={styles.link}>Dashboard</Link>
+                <Link to="/Affiliate/Dashboard" style={styles.link}>Dashboard</Link>
               </li>
               <li>
-                <Link to="/option2" style={styles.link}>Referral Tool</Link>
+                <Link to="/Affiliate/Referral Tool" style={styles.link}>Referral Tool</Link>
               </li>
               <li>
-                <Link to="/option3" style={styles.link}>Earning History</Link>
+                <Link to="/Affiliate/Earning History" style={styles.link}>Earning History</Link>
               </li>
             </ul>
           )}
@@ -259,12 +262,24 @@ const Page = () => {
                 toggleAffiliateDropdown={toggleAffiliateDropdown}
               />
               <div style={styles.body}>
+                <Breadcrumbs />
                 <Routes>
                   <Route path="/" element={<Home />} />
-                  <Route path="/about" element={<About />} />
-                  <Route path="/option1" element={<Option1 />} />
-                  <Route path="/option2" element={<Option2 />} />
-                  <Route path="/option3" element={<Option3 />} />
+                  <Route path="/dashboard" element={<Dashboard />} />
+                  <Route path="/patients" element={<About />} />
+                  <Route path="/doctor-schedule" element={<About />} />
+                  <Route path="/appointments" element={<About />} />
+                  <Route path="/chat" element={<About />} />
+                  <Route path="/consultation" element={<About />} />
+
+                  {/* Nested Wallet routes */}
+                  <Route path="/wallet/overview" element={<Option1 />} />
+                  <Route path="/wallet/transactions" element={<Option2 />} />
+
+                  {/* Nested Affiliate routes */}
+                  <Route path="/affiliate/dashboard" element={<Dashboard />} />
+                  <Route path="/affiliate/referral-tool" element={<Option2 />} />
+                  <Route path="/affiliate/earning-history" element={<Option3 />} />
                 </Routes>
               </div>
             </div>

@@ -11,7 +11,7 @@ const Navbar = ({ toggleSidebar }) => {
       </div>
 
       <div style={styles.searchWrapper}>
-        <span style={styles.searchIcon}>🔍</span>
+        <span style={styles.searchIcon}> <i className="fas fa-search"></i></span>
         <input
           type="search"
           placeholder="Search here"
@@ -22,11 +22,11 @@ const Navbar = ({ toggleSidebar }) => {
 
       <div style={styles.right}>
         <div style={styles.iconWrapper}>
-          <span style={styles.notificationIcon}>🔔</span>
+          <span style={styles.notificationIcon}> <i className="fas fa-bell"></i></span>
           <span style={styles.badge}>2</span>
         </div>
         <div style={styles.iconWrapper}>
-          <span style={styles.messageIcon}>💬</span>
+          <span style={styles.messageIcon}> <i className="fas fa-comments"></i></span>
           <span style={styles.badge}>3</span>
         </div>
 
@@ -42,7 +42,7 @@ const Navbar = ({ toggleSidebar }) => {
           />
         </div>
          <div style={styles.settingsIcon} title="Settings">
-            ⚙️
+            <i className="fas fa-cog"></i>
         </div>
       </div>
     </nav>
