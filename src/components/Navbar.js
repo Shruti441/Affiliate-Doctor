@@ -154,5 +154,5 @@ const styles = {
     objectFit: "cover",
   },
 };
-
+export default Navbar;
 
