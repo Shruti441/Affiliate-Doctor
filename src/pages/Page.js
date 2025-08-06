@@ -3,7 +3,11 @@ import Navbar from "../components/Navbar";  // or wherever your Navbar.js is
 import Breadcrumbs from '../components/Breadcrumbs';
 import Dashboard from "../pages/Dashboard"; // Adjust path if Dashboard.js is in pages folder and Page.js is also in pages folder
 import ReferralTool from "../pages/ReferralTool";
+<<<<<<< HEAD
 import EarningHistory from "../pages/EarningHistory";
+=======
+
+>>>>>>> 3050f493573c1a81d5468a93e822d3cb96136d52
 
 import {
   BrowserRouter as Router,
@@ -12,7 +16,10 @@ import {
   Link,
 } from "react-router-dom";
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3050f493573c1a81d5468a93e822d3cb96136d52
 const Sidebar = ({
   isOpen,
   walletDropdownOpen,
@@ -281,7 +288,11 @@ const Page = () => {
                   {/* Nested Affiliate routes */}
                   <Route path="/affiliate/dashboard" element={<Dashboard />} />
                   <Route path="//Affiliate/Referral Tool" element={<ReferralTool />} />
+<<<<<<< HEAD
                   <Route path="/affiliate/Earning History" element={<EarningHistory />} />
+=======
+                  <Route path="/affiliate/earning-history" element={<Option3 />} />
+>>>>>>> 3050f493573c1a81d5468a93e822d3cb96136d52
                 </Routes>
               </div>
             </div>
@@ -465,4 +476,8 @@ const modalStyles = {
 };
 
 
+<<<<<<< HEAD
 export default Page;
+=======
+export default Page;
+>>>>>>> 3050f493573c1a81d5468a93e822d3cb96136d52

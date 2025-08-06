@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "affiliate-doctor",
+=======
+  "name": "affiliate-dashboard",
+>>>>>>> 3050f493573c1a81d5468a93e822d3cb96136d52
   "version": "0.1.0",
   "private": true,
   "dependencies": {
